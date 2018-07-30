@@ -1,0 +1,16 @@
+﻿  FoodMenu.cpp
+  GUI.cpp
+  Login.cpp
+  Manager.cpp
+  Order.cpp
+  Person.cpp
+  Service Handling.cpp
+  Table.cpp
+  Waiter.cpp
+  Database_Handler.cpp
+  MyForm.cpp
+  MyForm1.cpp
+  MyForm2.cpp
+  Generating Code...
+  .NETFramework,Version=v4.6.1.AssemblyAttributes.cpp
+  YUM.vcxproj -> C:\Users\Clement\Documents\c++ Self learning\YUM\Release\YUM.exe
