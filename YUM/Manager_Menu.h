@@ -1,6 +1,7 @@
 #pragma once
 #include "Windows.h"
 #include "ManageStaff.h"
+#include "Manage_Foodmenu.h"
 
 namespace YUM {
 
@@ -125,11 +126,20 @@ namespace YUM {
 			MessageBox::Show("Please select something");
 			return;
 		}
-		this->Hide();
-		ManageStaff ^ f1 = gcnew ManageStaff();
-		f1->ShowDialog();
-		//MyForm1^ f1 = gcnew MyForm1();
-		//f1->ShowDialog();
+		else {
+			if (Operation_Combobox->SelectedIndex == 0) {
+				this->Hide();
+				ManageStaff ^ f1 = gcnew ManageStaff();
+				f1->ShowDialog();
+				//MyForm1^ f1 = gcnew MyForm1();
+				//f1->ShowDialog();
+			}
+			else if (Operation_Combobox->SelectedIndex == 2) {
+				this->Hide();
+				Manage_Foodmenu ^ f1 = gcnew Manage_Foodmenu();
+				f1->ShowDialog();
+			}
+		}
 	};
 	private: System::Void Manager_Menu_Load(System::Object^  sender, System::EventArgs^  e) {
 	}

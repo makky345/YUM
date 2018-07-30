@@ -170,6 +170,7 @@
     <ClCompile Include="..\..\..\..\Desktop\Yum Code\Waiter.cpp" />
     <ClCompile Include="Database_Handler.cpp" />
     <ClCompile Include="ManageStaff.cpp" />
+    <ClCompile Include="Manage_Foodmenu.cpp" />
     <ClCompile Include="Waiter_Menu.cpp" />
     <ClCompile Include="Welcome.cpp" />
     <ClCompile Include="LoginWindow.cpp" />
@@ -187,6 +188,9 @@
     <ClInclude Include="..\..\..\..\Desktop\Yum Code\Waiter.h" />
     <ClInclude Include="Database_Handler.h" />
     <ClInclude Include="ManageStaff.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Manage_Foodmenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Waiter_Menu.h">
@@ -208,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageStaff.resx">
       <DependentUpon>ManageStaff.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_Foodmenu.resx">
+      <DependentUpon>Manage_Foodmenu.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.h</DependentUpon>

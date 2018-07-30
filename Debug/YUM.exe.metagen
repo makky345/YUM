@@ -1,5 +1,6 @@
   YUM.Manager_Menu.resources - Embedded, ContainedInManifestFile, 
   YUM.ManageStaff.resources - Embedded, ContainedInManifestFile, 
+  YUM.Manage_Foodmenu.resources - Embedded, ContainedInManifestFile, 
   YUM.Welcome.resources - Embedded, ContainedInManifestFile, 
   YUM.LoginWindow.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -32,6 +33,12 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class YUM.Database_Handler: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class YUM.ManageStaff: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class YUM.Manage_Foodmenu: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class YUM.Waiter_Menu: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class YUM.Manager_Menu: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

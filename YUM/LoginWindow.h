@@ -12,7 +12,7 @@ namespace YUM {
 	using MySql::Data::MySqlClient::MySqlException;
 	using MySql::Data::MySqlClient::MySqlCommand;
 	using MySql::Data::MySqlClient::MySqlDataReader;
-	 
+
 
 	/// <summary>
 	/// Summary for MyForm1
@@ -156,7 +156,7 @@ namespace YUM {
 		MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
 		MySqlDataReader ^ myReader;
 
-		try{
+		try {
 			conDatabase->Open();
 			int count = 0;
 			String ^ role = gcnew String(this->managerOrService ? "1" : "0");
@@ -170,7 +170,7 @@ namespace YUM {
 				this->Hide();
 				if (role == "1") {
 					MessageBox::Show("This is a service staff");
-						this->Close();
+					this->Close();
 				}
 				else {
 					Manager_Menu ^ f1 = gcnew Manager_Menu();
@@ -181,8 +181,9 @@ namespace YUM {
 				//MessageBox::Show("Login is duplicated....Access denied");
 				throw gcnew Exception("Sorry ure stupid. this is bad they have hacked me!!!!!!");
 			}
-		
-		}catch(Exception^ex){
+
+		}
+		catch (Exception^ex) {
 			MessageBox::Show(ex->Message);
 		}
 
@@ -193,5 +194,5 @@ namespace YUM {
 	private: System::Void showParentWindow(System::Object^  sender, System::Windows::Forms::FormClosedEventArgs^  e) {
 		if (this->parentWindow) this->parentWindow->Show();
 	}
-};
+	};
 }
