@@ -23,6 +23,7 @@ namespace YUM {
 		ManageStaff(void)
 		{
 			InitializeComponent();
+			RefreshInfo();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -328,6 +329,19 @@ namespace YUM {
 
 		}
 #pragma endregion
+
+		private: System::Void RefreshInfo() {
+			String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
+			MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
+			MySqlDataAdapter^ ada = gcnew MySqlDataAdapter("SELECT * FROM `test-menu`.`test-menu-table` ", conDatabase);
+			DataTable^ dt = gcnew DataTable();
+			ada->Fill(dt);
+			bindingSource1->DataSource = dt;
+			dataGridView1->DataSource = bindingSource1;
+		}
+
+
+
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
