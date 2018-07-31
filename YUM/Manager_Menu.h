@@ -2,6 +2,7 @@
 #include "Windows.h"
 #include "ManageStaff.h"
 #include "Manage_Foodmenu.h"
+#include "Manage_Tables.h"
 
 namespace YUM {
 
@@ -128,15 +129,18 @@ namespace YUM {
 		}
 		else {
 			if (Operation_Combobox->SelectedIndex == 0) {
-				this->Hide();
 				ManageStaff ^ f1 = gcnew ManageStaff();
 				f1->ShowDialog();
+
 				//MyForm1^ f1 = gcnew MyForm1();
 				//f1->ShowDialog();
 			}
 			else if (Operation_Combobox->SelectedIndex == 2) {
-				this->Hide();
 				Manage_Foodmenu ^ f1 = gcnew Manage_Foodmenu();
+				f1->ShowDialog();
+			}
+			else if (Operation_Combobox->SelectedIndex == 3) {
+				Manage_Tables ^ f1 = gcnew Manage_Tables();
 				f1->ShowDialog();
 			}
 		}

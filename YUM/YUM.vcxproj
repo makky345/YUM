@@ -169,6 +169,8 @@
     <ClCompile Include="..\..\..\..\Desktop\Yum Code\Table.cpp" />
     <ClCompile Include="..\..\..\..\Desktop\Yum Code\Waiter.cpp" />
     <ClCompile Include="Database_Handler.cpp" />
+    <ClCompile Include="Manage_a_Table.cpp" />
+    <ClCompile Include="Manage_Tables.cpp" />
     <ClCompile Include="ManageStaff.cpp" />
     <ClCompile Include="Manage_Foodmenu.cpp" />
     <ClCompile Include="Waiter_Menu.cpp" />
@@ -187,6 +189,12 @@
     <ClInclude Include="..\..\..\..\Desktop\Yum Code\Table.h" />
     <ClInclude Include="..\..\..\..\Desktop\Yum Code\Waiter.h" />
     <ClInclude Include="Database_Handler.h" />
+    <ClInclude Include="Manage_a_Table.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Manage_Tables.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ManageStaff.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -207,6 +215,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Manage_a_Table.resx">
+      <DependentUpon>Manage_a_Table.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_Tables.resx">
+      <DependentUpon>Manage_Tables.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager_Menu.resx">
       <DependentUpon>Manager_Menu.h</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage_Foodmenu.resx">
       <DependentUpon>Manage_Foodmenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Waiter_Menu.resx">
+      <DependentUpon>Waiter_Menu.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.h</DependentUpon>

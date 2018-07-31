@@ -2,6 +2,7 @@
 
 #include "Windows.h"
 #include "LoginWindow.h"
+#include "Manage_a_Table.h"
 
 namespace YUM {
 
@@ -40,7 +41,7 @@ namespace YUM {
 	private: System::Windows::Forms::Label^  label1;
 	protected:
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::TextBox^  textBox1;
+
 
 	private: System::Windows::Forms::ComboBox^  managementOrService_comboBox;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
@@ -64,7 +65,6 @@ namespace YUM {
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Welcome::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->managementOrService_comboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -90,20 +90,6 @@ namespace YUM {
 			this->button1->Text = L"Continue";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Welcome::login_button_click);
-			// 
-			// textBox1
-			// 
-			this->textBox1->BackColor = System::Drawing::Color::IndianRed;
-			this->textBox1->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->textBox1->Location = System::Drawing::Point(241, 316);
-			this->textBox1->Multiline = true;
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(611, 51);
-			this->textBox1->TabIndex = 2;
-			this->textBox1->Text = L"Welcome asshole, hope you finished jacking off already\n. Please follow the instru"
-				L"ctions below to log in";
-			this->textBox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Welcome::textBox1_TextChanged);
 			// 
 			// managementOrService_comboBox
 			// 
@@ -137,7 +123,6 @@ namespace YUM {
 			this->ClientSize = System::Drawing::Size(1100, 533);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->managementOrService_comboBox);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Cambria", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -170,11 +155,17 @@ namespace YUM {
 			MessageBox::Show("Please select something");
 			return;
 		}
-		this->Hide();
-		LoginWindow ^ f1 = gcnew LoginWindow(managementOrService_comboBox->SelectedIndex, this);
-		f1->ShowDialog();
-		//MyForm1^ f1 = gcnew MyForm1();
-		//f1->ShowDialog();
+		else if (managementOrService_comboBox->SelectedIndex == 0) {
+			this->Hide();
+			LoginWindow ^ f1 = gcnew LoginWindow(managementOrService_comboBox->SelectedIndex, this);
+			f1->ShowDialog();
+		}
+		else if (managementOrService_comboBox->SelectedIndex == 1) {
+			enum  Status { Booked = 1, Unbooked = 2 };
+			this->Hide();
+			Manage_a_Table ^ f1 = gcnew Manage_a_Table();
+			f1->ShowDialog();
+		}
 	}
 private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
 }

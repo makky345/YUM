@@ -23,9 +23,7 @@ namespace YUM {
 		Manage_Foodmenu(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			RefreshInfo();
 		}
 
 	protected:
@@ -39,17 +37,12 @@ namespace YUM {
 				delete components;
 			}
 		}
-
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::TextBox^  Price_textbox;
-
 	private: System::Windows::Forms::TextBox^  Name_textbox;
 	private: System::Windows::Forms::TextBox^  Description_textbox;
-
-
-
 	private: System::Windows::Forms::BindingSource^  bindingSource1;
 	private: System::Windows::Forms::DataGridView^  dataGridView1;
 	private: System::Windows::Forms::Button^  Go_button;
@@ -57,12 +50,9 @@ namespace YUM {
 	private: System::Windows::Forms::Button^  Add_button;
 	private: System::Windows::Forms::Button^  Update_button;
 	private: System::Windows::Forms::Button^  Remove_button;
-
-
-
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::TextBox^  ID_textbox;
 	private: System::ComponentModel::IContainer^  components;
-	protected:
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -90,6 +80,8 @@ namespace YUM {
 			this->Add_button = (gcnew System::Windows::Forms::Button());
 			this->Update_button = (gcnew System::Windows::Forms::Button());
 			this->Remove_button = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->ID_textbox = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -99,7 +91,7 @@ namespace YUM {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(81, 145);
+			this->label2->Location = System::Drawing::Point(81, 229);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(57, 20);
 			this->label2->TabIndex = 1;
@@ -110,7 +102,7 @@ namespace YUM {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(81, 220);
+			this->label3->Location = System::Drawing::Point(81, 297);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(53, 20);
 			this->label3->TabIndex = 2;
@@ -121,7 +113,7 @@ namespace YUM {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(81, 298);
+			this->label4->Location = System::Drawing::Point(81, 367);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(106, 20);
 			this->label4->TabIndex = 3;
@@ -129,7 +121,7 @@ namespace YUM {
 			// 
 			// Price_textbox
 			// 
-			this->Price_textbox->Location = System::Drawing::Point(219, 218);
+			this->Price_textbox->Location = System::Drawing::Point(217, 295);
 			this->Price_textbox->Name = L"Price_textbox";
 			this->Price_textbox->Size = System::Drawing::Size(83, 22);
 			this->Price_textbox->TabIndex = 13;
@@ -137,7 +129,7 @@ namespace YUM {
 			// 
 			// Name_textbox
 			// 
-			this->Name_textbox->Location = System::Drawing::Point(217, 145);
+			this->Name_textbox->Location = System::Drawing::Point(217, 227);
 			this->Name_textbox->Name = L"Name_textbox";
 			this->Name_textbox->Size = System::Drawing::Size(200, 22);
 			this->Name_textbox->TabIndex = 14;
@@ -145,7 +137,7 @@ namespace YUM {
 			// 
 			// Description_textbox
 			// 
-			this->Description_textbox->Location = System::Drawing::Point(219, 296);
+			this->Description_textbox->Location = System::Drawing::Point(217, 367);
 			this->Description_textbox->Name = L"Description_textbox";
 			this->Description_textbox->Size = System::Drawing::Size(200, 22);
 			this->Description_textbox->TabIndex = 16;
@@ -220,11 +212,32 @@ namespace YUM {
 			this->Remove_button->UseVisualStyleBackColor = true;
 			this->Remove_button->Click += gcnew System::EventHandler(this, &Manage_Foodmenu::button1_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(81, 157);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(28, 20);
+			this->label1->TabIndex = 26;
+			this->label1->Text = L"ID";
+			// 
+			// ID_textbox
+			// 
+			this->ID_textbox->Location = System::Drawing::Point(217, 155);
+			this->ID_textbox->Name = L"ID_textbox";
+			this->ID_textbox->Size = System::Drawing::Size(200, 22);
+			this->ID_textbox->TabIndex = 27;
+			this->ID_textbox->Text = L"Id of the item";
+			// 
 			// Manage_Foodmenu
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1276, 611);
+			this->Controls->Add(this->ID_textbox);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Remove_button);
 			this->Controls->Add(this->Update_button);
 			this->Controls->Add(this->Add_button);
@@ -246,11 +259,21 @@ namespace YUM {
 
 		}
 #pragma endregion
+		private: System::Void RefreshInfo() {
+			String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
+			MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
+			MySqlDataAdapter^ ada = gcnew MySqlDataAdapter("SELECT * FROM `test-menu`.`test-menu-items` ", conDatabase);
+			DataTable^ dt = gcnew DataTable();
+			ada->Fill(dt);
+			bindingSource1->DataSource = dt;
+			dataGridView1->DataSource = bindingSource1;
+		}
 	private: System::Void Go_button_Click(System::Object^  sender, System::EventArgs^  e) {
 		try {
 			String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
 			MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
-			MySqlCommand^ comd = gcnew MySqlCommand("SELECT * FROM `test-menu`.`test-menu-items` WHERE Name = " + Name_textbox->Text + ";", conDatabase);
+			int ID = Int32::Parse(ID_textbox->Text);
+			MySqlCommand^ comd = gcnew MySqlCommand("SELECT * FROM `test-menu`.`test-menu-items` WHERE id = '" + ID_textbox->Text + "';", conDatabase);
 			conDatabase->Open();
 			MySqlDataReader^ Reader = comd->ExecuteReader();
 			while (Reader->Read()) {
@@ -265,13 +288,14 @@ namespace YUM {
 		}
 	}
 private: System::Void Getall_button_Click(System::Object^  sender, System::EventArgs^  e) {
-	String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
-	MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
-	MySqlDataAdapter^ ada = gcnew MySqlDataAdapter("SELECT * FROM `test-menu`.`test-menu-items` ", conDatabase);
-	DataTable^ dt = gcnew DataTable();
-	ada->Fill(dt);
-	bindingSource1->DataSource = dt;
-	dataGridView1->DataSource = bindingSource1;
+	RefreshInfo();
+	//String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
+	//MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
+	//MySqlDataAdapter^ ada = gcnew MySqlDataAdapter("SELECT * FROM `test-menu`.`test-menu-items` ", conDatabase);
+	//DataTable^ dt = gcnew DataTable();
+	//ada->Fill(dt);
+	//bindingSource1->DataSource = dt;
+	//dataGridView1->DataSource = bindingSource1;
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 	String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
@@ -285,6 +309,8 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 		MySqlDataReader^ reader;
 		reader = cmd->ExecuteReader();
 		MessageBox::Show("Info saved");
+		RefreshInfo();
+		conDatabase->Close();
 	}
 	catch (Exception^ ex)
 	{
@@ -294,17 +320,22 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	try {
-
 		String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
 		MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
+		int ID = Int32::Parse(ID_textbox->Text);
 		String^ name = Name_textbox->Text;
 		Decimal^ price = Decimal::Parse(Price_textbox->Text);
 		String^ desc = Description_textbox->Text;
 
-		MySqlCommand^ cmd = gcnew MySqlCommand("UPDATE `test-menu`.`test-menu-items` SET `Name` = '" + name + "', `Price` = '" + price + "', `Description` = '" + desc + "' WHERE Name = '" + name + "' ;", conDatabase);
+		MySqlCommand^ cmd = gcnew MySqlCommand("UPDATE `test-menu`.`test-menu-items` SET `Name` = '" + name + "', `Price` = '" + price + "', `Description` = '" + desc + "' WHERE Id = '" + ID + "' ;", conDatabase);
 		conDatabase->Open();
-		MySqlDataReader^ reader = cmd->ExecuteReader();
-		MessageBox::Show("info updated");
+		if (cmd->ExecuteNonQuery()) {
+			MessageBox::Show("info updated");
+		}
+		else {
+			MessageBox::Show("Please check the information entered.");
+		}
+		RefreshInfo();
 		conDatabase->Close();
 
 	}
@@ -313,14 +344,24 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 	}
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
-	MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
-	String^ name = Name_textbox->Text;
-	MySqlCommand^ cmd = gcnew MySqlCommand("DELETE from `test-menu`.`test-menu-items` WHERE `name` = '" + name + "' ;", conDatabase);
-	conDatabase->Open();
-	MySqlDataReader^ reader = cmd->ExecuteReader();
-	MessageBox::Show("User Info Deleted");
-	conDatabase->Close();
+	try {
+		String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
+		MySqlConnection ^ conDatabase = gcnew MySqlConnection(connectionString);
+		int ID = Int32::Parse(ID_textbox->Text);
+		MySqlCommand^ cmd = gcnew MySqlCommand("DELETE from `test-menu`.`test-menu-items` WHERE `id` = '" + ID + "' ;", conDatabase);
+		conDatabase->Open();
+		if (cmd->ExecuteNonQuery()) {
+			MessageBox::Show("Info Deleted");
+		}
+		else {
+			MessageBox::Show("Please check the information entered.");
+		}
+		RefreshInfo();
+		conDatabase->Close();
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
 }
 };
 }

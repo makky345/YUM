@@ -63,6 +63,12 @@
     <ClCompile Include="Manage_Foodmenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Manage_Tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Manage_a_Table.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Desktop\Yum Code\Waiter.h">
@@ -113,6 +119,12 @@
     <ClInclude Include="Manage_Foodmenu.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Manage_Tables.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Manage_a_Table.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LoginWindow.resx">
@@ -125,6 +137,12 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageStaff.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_Foodmenu.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage_Tables.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

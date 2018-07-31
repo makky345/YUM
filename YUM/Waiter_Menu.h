@@ -34,6 +34,10 @@ namespace YUM {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::ComboBox^  Operation_Combobox;
+	protected:
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Button^  button1;
 
 	private:
 		/// <summary>
@@ -48,11 +52,61 @@ namespace YUM {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Waiter_Menu";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->Operation_Combobox = (gcnew System::Windows::Forms::ComboBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// Operation_Combobox
+			// 
+			this->Operation_Combobox->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(2) {
+				L"Manage Employees",
+					L"Check Sales"
+			});
+			this->Operation_Combobox->DisplayMember = L"Please Select...";
+			this->Operation_Combobox->FormattingEnabled = true;
+			this->Operation_Combobox->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Manage a Table" });
+			this->Operation_Combobox->Location = System::Drawing::Point(576, 220);
+			this->Operation_Combobox->Name = L"Operation_Combobox";
+			this->Operation_Combobox->Size = System::Drawing::Size(172, 24);
+			this->Operation_Combobox->TabIndex = 5;
+			this->Operation_Combobox->Text = L"Please Select...";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(339, 220);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(150, 20);
+			this->label1->TabIndex = 4;
+			this->label1->Text = L"Select Operation";
+			// 
+			// button1
+			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(576, 341);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(172, 46);
+			this->button1->TabIndex = 3;
+			this->button1->Text = L"Go";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// Waiter_Menu
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(1240, 553);
+			this->Controls->Add(this->Operation_Combobox);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->button1);
+			this->Name = L"Waiter_Menu";
+			this->Text = L"Waiter_Menu";
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 #pragma endregion
 	};

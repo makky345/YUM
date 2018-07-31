@@ -8,6 +8,7 @@ using MySql::Data::MySqlClient::MySqlDataReader;
 
 [STAThreadAttribute]
 void Main(array<String^>^ args) {
+	
 	System::Diagnostics::Debug::WriteLine("\n\n\\n\n\n\n");
 	String ^ connectionString("server=localhost;port=3306;database=test-menu;uid=root;pwd=dopeswag123;");
 	MySqlConnection ^ conn = gcnew MySqlConnection(connectionString);
