@@ -22,6 +22,7 @@ namespace YUM {
 		Manage_Tables(void)
 		{
 			InitializeComponent();
+			RefreshInfo();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -54,7 +55,7 @@ namespace YUM {
 
 	private:
 		/// <summary>
-		/// Required designer variable.
+		/// Required designer variable.++
 		/// </summary>
 
 
